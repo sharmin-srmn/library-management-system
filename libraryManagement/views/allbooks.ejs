@@ -1,0 +1,81 @@
+<!-- HEADER  -->
+<%- include('./partial/header.ejs')%>
+
+<div class="container-fluid bg-light min-height">
+  <div class="row">
+    <!-- menu  -->
+    <div class="col-3 col-md-3 bg-dark min-height py-5">
+      <nav class="navbar flex-column">
+        <a href="/addnewbook" class="nav-link text-light capitalized-text mb-4"
+          >1: add new book
+        </a>
+        <a href="/book" class="nav-link text-light capitalized-text"
+          ><i class="fa-solid fa-arrow-left"></i
+          ><span class="span-text">back</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- table  -->
+    <div class="col-9 .col-md-9 py-5">
+      <div class="container-fluid">
+        <h2 class="bg-dark text-light text-center py-2 capitalized-text">
+          book information
+        </h2>
+      </div>
+      <table class="table table-light">
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <!-- <th scope="col">Id</th> -->
+            <th scope="col">Book Name</th>
+            <th scope="col">Author</th>
+            <th scope="col">Edition</th>
+            <th scope="col">Publish</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Inserted Date</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% let i =1 %> <% data.forEach((item) =>{ %>
+          <tr>
+            <th scope="row"><%= i++ %></th>
+            <!-- <td><%= item._id %></td> -->
+            <td class="capitalized-text"><%= item.bookName %></td>
+            <td class="capitalized-text"><%= item.authorName %></td>
+            <td><%= item.edition %></td>
+            <td><%= item.publish %></td>
+            <td><%= item.stock %></td>
+            <td><%= item.insertedDate.toISOString().split('T')[0];%></td>
+            <td>
+              <form
+                action="/editbook/<%= item._id %>"
+                method="get"
+                class="d-inline"
+              >
+                <button type="submit" class="btn">
+                  <i class="fa-solid fa-pen-to-square text-info"></i>
+                </button>
+              </form>
+
+              <form
+                action="/deletebook/<%= item._id %>"
+                method="post"
+                class="d-inline"
+              >
+                <button type="submit" class="btn">
+                  <i class="fa-solid fa-trash text-danger"></i>
+                </button>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+<%- include('./partial/footer.ejs')%>

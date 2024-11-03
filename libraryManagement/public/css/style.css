@@ -1,0 +1,45 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  color: black;
+}
+.min-height {
+  min-height: 100vh;
+}
+.title-text {
+  font-size: 25px;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+}
+.menu-text {
+  font-weight: 500;
+  line-height: 2em;
+  font-size: 18px;
+  color: white;
+}
+.capitalized-text {
+  text-transform: capitalize;
+}
+.main-container {
+  background-image: url("../images/background.png");
+  position: relative;
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+.main-container::before {
+  z-index: -1;
+  content: "";
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 55%,
+    rgba(255, 0, 0, 0)
+  );
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
