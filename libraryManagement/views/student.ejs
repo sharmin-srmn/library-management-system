@@ -1,32 +1,30 @@
 <!-- HEADER  -->
 <%- include('./partial/header.ejs')%>
-
 <div class="main-container container-fluid">
   <div class="row">
     <div
-      class="book-container d-flex flex-column align-items-center justify-content-center min-height col-6"
+      class="add-student-container d-flex flex-column align-items-center justify-content-center min-height col-6"
     >
       <div class="title-container">
         <h2 class="title-text">Library Management System</h2>
       </div>
       <div class="main-menu">
         <nav
-          class="navbar d-flex flex-column align-content-center justify-content-center align-items-start mt-4"
+          class="d-flex flex-column align-content-center justify-content-center align-items-start mt-4"
         >
           <a
-            href="/addnewbook"
+            href="/addnewstudent"
             class="nav-link text-light capitalized-text menu-text"
-            >1: add new book</a
+            >1: add new student</a
           >
           <a
-            href="/allbooks"
+            href="/allstudents"
             class="nav-link text-light capitalized-text menu-text"
-            >2: view all books
+            >2: view all students
           </a>
-
           <a href="/" class="nav-link text-light capitalized-text menu-text"
             ><i class="fa-solid fa-arrow-left"></i
-            ><span class="span-text">back</span>
+            ><span class="back-button">back</span>
           </a>
         </nav>
       </div>

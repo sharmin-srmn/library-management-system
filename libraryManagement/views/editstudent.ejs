@@ -1,0 +1,170 @@
+<!-- HEADER  -->
+<%- include('./partial/header.ejs')%>
+
+<div class="main-container container-fluid py-5">
+  <div class="row">
+    <div
+      class="add-student-container d-flex flex-column align-items-center justify-content-center min-height col-6"
+    >
+      <div class="title-container mb-5">
+        <h2 class="title-text">edit student</h2>
+      </div>
+      <div class="form-container">
+        <!-- // libarary id card, enrollment date  -->
+        <form action="/updatestudent/<%= data._id%>" method="POST">
+          <div class="mb-4">
+            <label for="name " class="form-label capitalized-text">
+              student's name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              value="<%= data.name%>"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="email " class="form-label capitalized-text">
+              email</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              value="<%= data.email%>"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="dob " class="form-label capitalized-text">
+              date of birth</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="dob"
+              name="dob"
+              value="<%= data.dob%>"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="gender " class="form-label capitalized-text">
+              gender</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="gender"
+              name="gender"
+              value="<%= data.gender%>"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="address " class="form-label capitalized-text">
+              address</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="address"
+              name="address"
+              value="<%= data.address%>"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="phone " class="form-label capitalized-text">
+              phone number</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="phone"
+              name="phone"
+              value="<%= data.phone%>"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="altphone " class="form-label capitalized-text">
+              alternative phone number</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="altphone"
+              name="altphone"
+              value="<%= data.altphone%>"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="department " class="form-label capitalized-text">
+              department</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="department"
+              name="department"
+              value="<%= data.department%>"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="status " class="form-label capitalized-text">
+              status</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="status"
+              name="status"
+              value="<%= data.status%>"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="enrollmentDate " class="form-label capitalized-text">
+              enrollment date</label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="enrollmentDate"
+              name="enrollmentDate"
+              value="<%=data.enrollmentDate ? data.enrollmentDate.toISOString : ' '%>"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              for="expectedGraduationDate "
+              class="form-label capitalized-text"
+            >
+              expected graduation date</label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="expectedGraduationDate"
+              name="expectedGraduationDate"
+              value="<%= data.expectedGraduationDate ? data.expectedGraduationDate.toISOString().substring(0, 10) :' '%> "
+            />
+          </div>
+          <button type="submit" class="btn btn-dark capitalized-text">
+            submit
+          </button>
+          <button type="button" class="btn btn-primary capitalized-text">
+            <a href="/allstudents" class="text-light"
+              ><i class="fa-solid fa-arrow-left"></i
+              ><span class="span-text">back</span></a
+            >
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+<%- include('./partial/footer.ejs')%>

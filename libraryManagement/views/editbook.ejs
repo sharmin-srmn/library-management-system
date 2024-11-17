@@ -4,17 +4,18 @@
 <div class="main-container container-fluid py-5 min-height">
   <div class="row">
     <div
-      class="d-flex flex-column align-items-center justify-content-center col-6 col-md-6"
+      class="add-book-container d-flex flex-column align-items-center justify-content-center col-6 col-md-6"
     >
       <div class="title-container">
         <h2 class="title-text mb-5">edit book information</h2>
       </div>
 
       <div class="form-container">
-        <form action=" /updatebook/<%= data._id%>" method="post">
+        <form action="/updatebook/<%= data._id %>" method="post">
+          <!-- BOOK NAME  -->
           <div class="mb-4">
             <label for="bookName" class="form-label capitalized-text">
-              book's name</label
+              * book's name</label
             >
             <input
               type="text"
@@ -24,9 +25,10 @@
               value="<%= data.bookName %>"
             />
           </div>
+          <!-- AUTHOR  -->
           <div class="mb-4">
             <label for="authorName" class="form-label capitalized-text">
-              author's name</label
+              *author's name</label
             >
             <input
               type="text"
@@ -36,9 +38,36 @@
               value="<%= data.authorName %>"
             />
           </div>
+          <!-- EDITOR  -->
+          <div class="mb-4">
+            <label for="editorName" class="form-label capitalized-text">
+              *editor's name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="editorName"
+              name="editorName"
+              value="<%= data.editorName %>"
+            />
+          </div>
+          <!-- PUBLISHER  -->
+          <div class="mb-4">
+            <label for="publisherName" class="form-label capitalized-text">
+              *publisher's name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="publisherName"
+              name="publisherName"
+              value="<%= data.publisherName %>"
+            />
+          </div>
+          <!-- EDITION  -->
           <div class="mb-4">
             <label for="edition" class="form-label capitalized-text">
-              edition</label
+              * edition</label
             >
             <input
               type="text"
@@ -48,9 +77,23 @@
               value="<%= data.edition %>"
             />
           </div>
+          <!-- CATEGORY  -->
+          <div class="mb-4">
+            <label for="category" class="form-label capitalized-text">
+              *category</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="category"
+              name="category"
+              value="<%= data.category %>"
+            />
+          </div>
+          <!-- PUBLICATION DATE  -->
           <div class="mb-4">
             <label for="publish" class="form-label capitalized-text">
-              published year</label
+              *published year</label
             >
             <input
               type="text"
@@ -60,25 +103,71 @@
               value="<%= data.publish %>"
             />
           </div>
-          <div class="mb-5">
-            <label for="stock" class="form-label capitalized-text">
-              stock</label
+          <!-- QUANTITY  -->
+          <div class="mb-4">
+            <label for="quantity" class="form-label capitalized-text">
+              *quantity</label
             >
             <input
               type="text"
               class="form-control"
-              id="stock"
-              name="stock"
-              value="<%= data.stock %>"
+              id="quantity"
+              name="quantity"
+              value="<%= data.quantity %>"
             />
           </div>
-          <button type="submit" class="btn btn-danger capitalized-text">
-            update
-          </button>
-          <button type="button" class="btn btn-dark capitalized-text">
-            <a href="/allbooks" class="text-light"
+          <!-- COONDITION  -->
+          <div class="mb-4">
+            <label for="condition" class="form-label capitalized-text">
+              *condition</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="condition"
+              name="condition"
+              value="<%= data.condition %>"
+            />
+          </div>
+          <!-- STATUS  -->
+          <div class="mb-4">
+            <label for="status" class="form-label capitalized-text">
+              status</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="status"
+              name="status"
+              value="<%= data.status ? data.status : ' ' %>"
+            />
+          </div>
+          <!-- NOTES  -->
+          <div class="mb-4">
+            <label for="notes" class="form-label capitalized-text">
+              notes</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="notes"
+              name="notes"
+              value="<%= data.notes ? data.notes : ' ' %>"
+            />
+          </div>
+          <!-- BOOK IMAGE  -->
+          <div class="mb-4">
+            <label for="avater " class="form-label capitalized-text">
+              upload book's image</label
+            >
+            <input type="file" class="form-control" id="avater" name="avater" />
+          </div>
+          <!-- BUTTONS  -->
+          <button class="btn btn-dark capitalized-text">submit</button>
+          <button type="button" class="btn btn-primary capitalized-text">
+            <a href="/book" class="text-light"
               ><i class="fa-solid fa-arrow-left"></i
-              ><span class="span-text">back </span></a
+              ><span class="back-button">back</span></a
             >
           </button>
         </form>

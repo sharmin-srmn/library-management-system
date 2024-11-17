@@ -1,0 +1,90 @@
+<!-- HEADER  -->
+<%- include('./partial/header.ejs')%>
+
+<div class="main-container-fluid bg-light min-height">
+  <div class="row">
+    <!-- menu  -->
+
+    <!-- table  -->
+    <div class="col-12 .col-md-12 py-5">
+      <div class="">
+        <h2
+          class="title-text bg-dark text-light text-center py-2 capitalized-text"
+        >
+          student information
+        </h2>
+      </div>
+      <div class="table-container table-responsive">
+        <table class="table table-light">
+          <thead>
+            <tr>
+              <th scope="col" width="25px">No.</th>
+              <th scope="col">Student Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Library Id</th>
+              <th scope="col">Department</th>
+              <th scope="col">Actions</th>
+              <!-- <th scope="col">expected Graduation date</th> -->
+            </tr>
+          </thead>
+
+          <tbody>
+            <% let i =1 %> <% data.forEach((student) =>{ %>
+            <tr>
+              <th scope="row"><%= i++ %></th>
+              <td class="capitalized-text"><%= student._id %></td>
+              <td class="capitalized-text"><%= student.name %></td>
+              <td><%= student.email %></td>
+              <td><%= student.phone %></td>
+              <td><%= student.libraryId ? student.libraryId : 'N/A' %></td>
+              <td><%= student.department.toUpperCase() %></td>
+
+              <td>
+                <div class="button-group">
+                  <!-- EDIT BUTTON  -->
+                  <form
+                    action="/editstudent/<%= student._id %>"
+                    method="get"
+                    class="d-inline"
+                  >
+                    <button type="submit" class="btn">
+                      <i class="fa-solid fa-pen-to-square text-info"></i>
+                    </button>
+                  </form>
+
+                  <!-- DELETE BUTTON  -->
+                  <form
+                    action="/deletestudent/<%= student._id %>"
+                    method="post"
+                    class="d-inline"
+                  >
+                    <button type="submit" class="btn">
+                      <i class="fa-solid fa-trash text-danger"></i>
+                    </button>
+                  </form>
+
+                  <!-- DETAILS BUTTON  -->
+                  <form
+                    action="/studentinfo/<%= student._id %>"
+                    method="get"
+                    class="d-inline"
+                  >
+                    <button type="submit" class="btn btn-info btn-sm">
+                      <span class="capitalized-text">view details</span>
+                    </button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+<%- include('./partial/footer.ejs')%>

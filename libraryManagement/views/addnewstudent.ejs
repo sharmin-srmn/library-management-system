@@ -1,0 +1,156 @@
+<!-- HEADER  -->
+<%- include('./partial/header.ejs')%>
+
+<div class="main-container container-fluid py-5">
+  <div class="row">
+    <div
+      class="add-student-container d-flex flex-column align-items-center justify-content-center min-height col-6"
+    >
+      <div class="title-container mb-5">
+        <h2 class="title-text">add new student</h2>
+      </div>
+      <div class="form-container">
+        <!-- // libarary id card, enrollment date  -->
+        <form action="/addnewstudent" method="POST">
+          <!-- NAME   -->
+          <div class="mb-4">
+            <label for="name " class="form-label capitalized-text">
+              *student's name</label
+            >
+            <input type="text" class="form-control" id="name" name="name" />
+          </div>
+
+          <!-- EMAIL  -->
+          <div class="mb-4">
+            <label for="email " class="form-label capitalized-text">
+              *email</label
+            >
+            <input type="email" class="form-control" id="email" name="email" />
+          </div>
+
+          <!-- DATE OF BIRTH  -->
+          <div class="mb-4">
+            <label for="dob " class="form-label capitalized-text">
+              *date of birth</label
+            >
+            <input type="text" class="form-control" id="dob" name="dob" />
+          </div>
+
+          <!-- GENDER  -->
+          <div class="mb-4">
+            <label for="gender " class="form-label capitalized-text">
+              gender</label
+            >
+            <input type="text" class="form-control" id="gender" name="gender" />
+          </div>
+
+          <!-- ADDRESS  -->
+          <div class="mb-4">
+            <label for="address " class="form-label capitalized-text">
+              *address</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="address"
+              name="address"
+            />
+          </div>
+
+          <!-- PHONE  -->
+          <div class="mb-4">
+            <label for="phone " class="form-label capitalized-text">
+              * phone number</label
+            >
+            <input type="text" class="form-control" id="phone" name="phone" />
+          </div>
+
+          <!-- ALTERNATIVE PHONE  -->
+          <div class="mb-4">
+            <label for="altphone " class="form-label capitalized-text">
+              alternative phone number</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="altphone"
+              name="altphone"
+            />
+          </div>
+
+          <!-- DEPARTMENT  -->
+          <div class="mb-4">
+            <label for="department " class="form-label capitalized-text">
+              *department</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="department"
+              name="department"
+            />
+          </div>
+
+          <!-- STATUS  -->
+          <div class="mb-4">
+            <label for="status " class="form-label capitalized-text">
+              *status</label
+            >
+            <input type="text" class="form-control" id="status" name="status" />
+          </div>
+
+          <!-- ENROLLMENT DATE  -->
+          <div class="mb-4">
+            <label for="enrollmentDate " class="form-label capitalized-text">
+              enrollment date</label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="enrollmentDate"
+              name="enrollmentDate"
+            />
+          </div>
+
+          <!-- EXPECTED GRADUATION DATE  -->
+          <div class="mb-4">
+            <label
+              for="expectedGraduationDate "
+              class="form-label capitalized-text"
+            >
+              expected graduation date</label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="expectedGraduationDate"
+              name="expectedGraduationDate"
+            />
+          </div>
+
+          <!-- AVATER  -->
+          <div class="mb-4">
+            <label for="avater " class="form-label capitalized-text">
+              upload image</label
+            >
+            <input type="file" class="form-control" id="avater" name="avater" />
+          </div>
+
+          <!-- BUTTONS  -->
+          <button type="submit" class="btn btn-dark capitalized-text">
+            submit
+          </button>
+          <button type="button" class="btn btn-primary capitalized-text">
+            <a href="/student" class="text-light"
+              ><i class="fa-solid fa-arrow-left"></i
+              ><span class="back-button">back</span></a
+            >
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+<%- include('./partial/footer.ejs')%>

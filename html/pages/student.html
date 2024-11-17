@@ -15,38 +15,44 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="all.css" />
-    <link rel="stylesheet" href="bootstrap.css" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Home</title>
+    <link rel="stylesheet" href="../css/all.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/student.css" />
+    <title>Students Page</title>
   </head>
   <body>
-    <div class="main-container container-fluid min-height">
+    <div class="main-container container-fluid">
       <div class="row">
         <div
-          class="d-flex flex-column align-items-center justify-content-center min-height col-6 col-md-6"
+          class="add-student-container d-flex flex-column align-items-center justify-content-center min-height col-6"
         >
           <div class="title-container">
-            <h2 class="title-text mb-5">Library Management System</h2>
+            <h2 class="title-text">Library Management System</h2>
           </div>
           <div class="main-menu">
             <nav
               class="navbar d-flex flex-column align-content-center justify-content-center align-items-start mt-4"
             >
               <a
-                href="/books.html"
+                href="./addnewstudent.html"
                 class="nav-link text-light capitalized-text menu-text"
-                >1: books</a
+                >1: add new student</a
               >
+              <a
+                href="./allstudents.html"
+                class="nav-link text-light capitalized-text menu-text"
+                >2: view all students
+              </a>
               <a href="/" class="nav-link text-light capitalized-text menu-text"
-                >2: students
+                ><i class="fa-solid fa-arrow-left"></i
+                ><span class="back-button">back</span>
               </a>
             </nav>
           </div>
         </div>
       </div>
     </div>
-    <script src="/js/all.js"></script>
-    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="../js/all.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
   </body>
 </html>

@@ -1,0 +1,105 @@
+<!-- HEADER  -->
+<%- include('./partial/header.ejs')%>
+
+<div class="container-fluid bg-light min-height">
+  <div class="row">
+    <!-- menu  -->
+
+    <!-- table  -->
+    <div class="col-12 col-md-12 py-5">
+      <div class="">
+        <h2
+          class="title-text bg-dark text-light text-center py-2 capitalized-text"
+        >
+          issued book information
+        </h2>
+      </div>
+      <div class="table-container table-responsive">
+        <table class="table table-light">
+          <thead>
+            <tr>
+              <th scope="col">No.</th>
+              <th scope="col">Book ID</th>
+              <th scope="col">Book Name</th>
+              <th scope="col">Student ID</th>
+              <th scope="col">Student Name</th>
+              <th scope="col">Issued date</th>
+              <th scope="col">Due Date</th>
+              <th scope="col">Status</th>
+              <th scope="col">Return date</th>
+              <th scope="col">Issued By</th>
+              <th scope="col">Fine</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% let i =1 %> <% data.forEach((item) =>{ %>
+            <tr>
+              <th scope="row"><%= i++ %></th>
+              <td><%= item.bookId %></td>
+              <td class="capitalized-text"><%= item.bookName %></td>
+              <td class="capitalized-text"><%= item.studentId %></td>
+              <td class="capitalized-text"><%= item.studentName %></td>
+              <td class="capitalized-text">
+                <%= item.issueDate ? item.issueDate.toISOString().split('T')[0]
+                : 'n/a' %>
+              </td>
+              <td class="capitalized-text">
+                <%= item.dueDate ? item.dueDate.toISOString().split('T')[0] :
+                'n/a' %>
+              </td>
+              <td class="capitalized-text"><%= item.status %></td>
+              <td class="capitalized-text">
+                <%= item.returnDate ?
+                item.returnDate.toISOString().split('T')[0] : 'n/a' %>
+              </td>
+              <td class="capitalized-text"><%= item.issuedBy %></td>
+              <td class="capitalized-text">
+                <%= item.fineAmount? item.fineAmount : '0' %>tk
+              </td>
+
+              <td>
+                <div class="button-group">
+                  <!-- FINE BUTTON  -->
+                  <form
+                  action="/countfine/<%= item._id%>"
+                    method="post"
+                    class="d-inline"
+                  >
+                    <button
+                      type="submit"
+                      class="btn btn-sm btn-danger return-button"
+                      <%= item.status === 'returned' ? 'disabled' : '' %>
+                    >
+                      fine
+                    </button>
+                  </form>
+                  <!-- RETURN BUTTON  -->
+                  <form
+                  action="/returnbook/<%= item._id%>"
+
+                    method="post"
+                    class="d-inline"
+                  >
+                    <button
+                      type="submit"
+                      class="btn btn-sm btn-success return-button"
+                      <%= item.status === 'returned' ? 'disabled' : '' %>
+                    >
+                      return
+                    </button>
+                  </form>
+                  
+                </div>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+<%- include('./partial/footer.ejs')%>

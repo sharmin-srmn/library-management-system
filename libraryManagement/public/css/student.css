@@ -1,0 +1,144 @@
+@import url("./style.css");
+body {
+  margin: 0;
+}
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.main-container {
+  background-image: url("../images/student.png");
+  background-attachment: fixed;
+}
+/* ADD NEW STUDENT PAGE  */
+.form-container {
+  width: 70%;
+}
+.form-label {
+  color: white;
+}
+
+/* ALL STUDENT PAGE  */
+
+/* STUDENT DETAILS PAGE  */
+.student-info-container {
+  text-transform: capitalize;
+  gap: 60px;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+.student-info-container .title-text {
+  padding: 20px;
+  border-bottom: 2px solid red;
+}
+.student-personal-info-container,
+.student-academic-info-container {
+  width: 40%;
+  box-shadow: 0 0 2px 3px rgba(255, 255, 255, 0.5);
+  background-color: #00000070;
+}
+.table-container {
+  padding: 20px;
+}
+.issued-book-container .table-container {
+  padding: 20px;
+  width: 90%;
+  background: #212529;
+}
+.table-container th {
+  white-space: nowrap;
+}
+.table-container th,
+.table-container td {
+  padding: 10px;
+  font-size: 12px;
+  word-wrap: normal;
+}
+.table-container .student-avater {
+  width: 40px;
+}
+.issued-book-container {
+  /* width: 100%; */
+  color: white;
+  text-transform: capitalize;
+}
+
+.comment {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100px;
+}
+
+/* RESPONSIVE  */
+
+@media (max-width: 480px) {
+  .main-container {
+    background-size: cover;
+  }
+  .main-container::before {
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.9) 55%,
+      rgba(255, 0, 0, 0)
+    );
+  }
+  .add-student-container {
+    width: 99%;
+  }
+  .form-label {
+    font-size: 12px;
+  }
+  #enrollmentdate,
+  #expectedgraduationdate,
+  #avater {
+    font-size: 12px; /* Adjust font size */
+    color: gray; /* Optional */
+    padding: 10px; /* Adjust padding if needed */
+  }
+  .btn {
+    font-size: 14px;
+  }
+  .title-text {
+    font-size: 14px;
+  }
+  .menu-text {
+    font-size: 14px;
+  }
+  .button-group {
+    display: flex;
+  }
+  /* STUDENT DETAILS PAGE  */
+  .student-info-container {
+    flex-direction: column;
+    gap: 40px;
+    width: 90%;
+    align-items: center;
+  }
+  .student-academic-info-container,
+  .student-personal-info-container {
+    width: 100%;
+  }
+  .table-container {
+    overflow-x: auto;
+  }
+  .table-container th,
+  .table-container td {
+    font-size: 10px;
+  }
+  .student-info-container .table-container th,
+  .student-info-container .table-container td {
+    padding: 4px 10px;
+    word-wrap: normal;
+    word-break: break-all;
+    vertical-align: top;
+  }
+  .issued-book-container {
+    margin-top: 0 !important;
+  }
+  .issued-book-container .title-text {
+    text-align: center;
+    padding-top: 0 !important;
+  }
+}

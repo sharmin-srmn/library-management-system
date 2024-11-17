@@ -1,6 +1,7 @@
 body {
   font-family: "Montserrat", sans-serif;
   color: black;
+  /* cursor: pointer; */
 }
 .min-height {
   min-height: 100vh;
@@ -42,4 +43,47 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
+}
+.back-button {
+  display: inline-block;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    background-size: cover;
+  }
+
+  .main-container::before {
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.9) 55%,
+      rgba(255, 0, 0, 0)
+    );
+  }
+
+  .inner-container {
+    width: 99%;
+  }
+
+  .title-text {
+    font-size: 18px;
+  }
+  .menu-text {
+    font-size: 14px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 2px;
+}
+::-webkit-scrollbar-track {
+  background-color: black;
+}
+::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 10px;
+  height: 20px;
 }

@@ -1,0 +1,144 @@
+<!-- HEADER  -->
+<%- include('./partial/header.ejs')%>
+
+<div class="main-container container-fluid py-5 min-height">
+  <div class="row">
+    <div
+      class="add-book-container d-flex flex-column align-items-center justify-content-center col-6"
+    >
+      <div class="title-container mb-5">
+        <h2 class="title-text">issue book information</h2>
+      </div>
+      <div class="form-container">
+        <form action="/issuenewbook" method="post">
+          <!-- BOOK NAME  -->
+          <!-- <div class="mb-4">
+            <label for="bookName" class="form-label capitalized-text">
+              *book's name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="bookName"
+              name="bookName"
+            />
+          </div> -->
+          <!-- BOOK ID  -->
+          <div class="mb-4">
+            <label for="bookId" class="form-label capitalized-text">
+              *book's id</label
+            >
+            <input type="text" class="form-control" id="bookId" name="bookId" />
+          </div>
+          <!-- STUDENT NAME  -->
+          <!-- <div class="mb-4">
+            <label for="studentName" class="form-label capitalized-text">
+              *student's name</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="studentName"
+              name="studentName"
+            />
+          </div> -->
+          <!-- STUDENT ID  -->
+          <div class="mb-4">
+            <label for="studentId" class="form-label capitalized-text">
+              *student's id</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="studentId"
+              name="studentId"
+            />
+          </div>
+          <!-- ISSUE DATE  -->
+          <div class="mb-4">
+            <label for="issueDate" class="form-label capitalized-text">
+              * issue date</label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="issueDate"
+              name="issueDate"
+              value="<%= new Date().toISOString().split('T')[0] %>"
+            />
+          </div>
+          <!-- DUE DATE  -->
+          <div class="mb-4">
+            <label for="dueDate" class="form-label capitalized-text">
+              *due date</label
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="dueDate"
+              name="dueDate"
+              value="<%= new Date(Date.now() + 3 * 24 * 60 * 60 *1000 ).toISOString().split('T')[0] %>"
+            />
+          </div>
+          <!-- RETURN DATE  -->
+          <!-- <div class="mb-4">
+            <label for="returnDate" class="form-label capitalized-text">
+              return date</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="returnDate"
+              name="returnDate"
+            />
+          </div> -->
+          <!-- STATUS  -->
+          <!-- <div class="mb-4">
+            <label for="status" class="form-label capitalized-text">
+              *status</label
+            >
+            <input type="text" class="form-control" id="status" name="status" />
+          </div> -->
+          <!-- ISSUED BY  -->
+          <div class="mb-4">
+            <label for="issuedBy" class="form-label capitalized-text">
+              *issued by</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="issuedBy"
+              name="issuedBy"
+            />
+          </div>
+          <!-- FINE AMOUNT  -->
+          <!-- <div class="mb-4">
+            <label for="fineAmount" class="form-label capitalized-text">
+              fine amount</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="fineAmount"
+              name="fineAmount"
+            />
+          </div> -->
+
+          <!-- BUTTONS  -->
+          <button type="submit" class="btn btn-dark capitalized-text">
+            submit
+          </button>
+          <button type="button" class="btn btn-primary capitalized-text">
+            <a href="/book" class="text-light"
+              ><i class="fa-solid fa-arrow-left"></i
+              ><span class="back-button">back</span></a
+            >
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+<%- include('./partial/footer.ejs')%>

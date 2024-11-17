@@ -4,75 +4,88 @@
 <div class="container-fluid bg-light min-height">
   <div class="row">
     <!-- menu  -->
-    <div class="col-3 col-md-3 bg-dark min-height py-5">
-      <nav class="navbar flex-column">
-        <a href="/addnewbook" class="nav-link text-light capitalized-text mb-4"
-          >1: add new book
-        </a>
-        <a href="/book" class="nav-link text-light capitalized-text"
-          ><i class="fa-solid fa-arrow-left"></i
-          ><span class="span-text">back</span>
-        </a>
-      </nav>
-    </div>
 
     <!-- table  -->
-    <div class="col-9 .col-md-9 py-5">
-      <div class="container-fluid">
-        <h2 class="bg-dark text-light text-center py-2 capitalized-text">
+    <div class="col-12 col-md-12 py-5">
+      <div class="">
+        <h2
+          class="title-text bg-dark text-light text-center py-2 capitalized-text"
+        >
           book information
         </h2>
       </div>
-      <table class="table table-light">
-        <thead>
-          <tr>
-            <th scope="col">No.</th>
-            <!-- <th scope="col">Id</th> -->
-            <th scope="col">Book Name</th>
-            <th scope="col">Author</th>
-            <th scope="col">Edition</th>
-            <th scope="col">Publish</th>
-            <th scope="col">Stock</th>
-            <th scope="col">Inserted Date</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% let i =1 %> <% data.forEach((item) =>{ %>
-          <tr>
-            <th scope="row"><%= i++ %></th>
-            <!-- <td><%= item._id %></td> -->
-            <td class="capitalized-text"><%= item.bookName %></td>
-            <td class="capitalized-text"><%= item.authorName %></td>
-            <td><%= item.edition %></td>
-            <td><%= item.publish %></td>
-            <td><%= item.stock %></td>
-            <td><%= item.insertedDate.toISOString().split('T')[0];%></td>
-            <td>
-              <form
-                action="/editbook/<%= item._id %>"
-                method="get"
-                class="d-inline"
-              >
-                <button type="submit" class="btn">
-                  <i class="fa-solid fa-pen-to-square text-info"></i>
-                </button>
-              </form>
+      <div class="table-container table-responsive">
+        <table class="table table-light">
+          <thead>
+            <tr>
+              <th scope="col">No.</th>
+              <th scope="col">Id</th>
+              <th scope="col">Book Name</th>
+              <th scope="col">Author</th>
+              <th scope="col">Editor</th>
+              <th scope="col">Publisher</th>
+              <th scope="col">Edition</th>
+              <th scope="col">Category</th>
+              <th scope="col">Publication Year</th>
+              <th scope="col">Condition</th>
+              <th scope="col">Stock</th>
+              <th scope="col">Status</th>
+              <th scope="col">Notes</th>
+              <th scope="col">Inserted Date</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% let i =1 %> <% data.forEach((item) =>{ %>
+            <tr>
+              <th scope="row"><%= i++ %></th>
+              <td><%= item._id %></td>
+              <td class="capitalized-text"><%= item.bookName %></td>
+              <td class="capitalized-text"><%= item.authorName %></td>
+              <td class="capitalized-text"><%= item.editorName %></td>
+              <td class="capitalized-text"><%= item.publisherName %></td>
+              <td><%= item.edition %></td>
+              <td class="capitalized-text"><%= item.category %></td>
+              <td><%= item.publish %></td>
+              <td class="capitalized-text"><%= item.condition %></td>
+              <td class="capitalized-text">
+                <%= item.quantity < 0 ? 'Not Available' : item.quantity %>
+              </td>
+              <td class="capitalized-text">
+                <%= item.status ? item.status : 'N/A' %>
+              </td>
+              <td class="capitalized-text">
+                <%= item.notes ? item.notes :'N/A' %>
+              </td>
+              <td><%= item.insertedDate.toISOString().split('T')[0];%></td>
+              <td>
+                <div class="button-group">
+                  <form
+                    action="/editbook/<%= item._id %>"
+                    method="get"
+                    class="d-inline"
+                  >
+                    <button type="submit" class="btn">
+                      <i class="fa-solid fa-pen-to-square text-info"></i>
+                    </button>
+                  </form>
 
-              <form
-                action="/deletebook/<%= item._id %>"
-                method="post"
-                class="d-inline"
-              >
-                <button type="submit" class="btn">
-                  <i class="fa-solid fa-trash text-danger"></i>
-                </button>
-              </form>
-            </td>
-          </tr>
-          <% }) %>
-        </tbody>
-      </table>
+                  <form
+                    action="/deletebook/<%= item._id %>"
+                    method="post"
+                    class="d-inline"
+                  >
+                    <button type="submit" class="btn">
+                      <i class="fa-solid fa-trash text-danger"></i>
+                    </button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

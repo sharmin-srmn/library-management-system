@@ -2,6 +2,10 @@
 body {
   margin: 0;
 }
+.main-container {
+  background-image: url("../images/background.png");
+  background-attachment: fixed;
+}
 
 .span-text {
   display: inline-block;
@@ -12,4 +16,62 @@ body {
 }
 .form-label {
   color: white;
+}
+/* ALL BOOS PAGE  */
+.table-container {
+  padding: 20px;
+}
+.table-container th {
+  white-space: nowrap;
+}
+.table-container th,
+.table-container td {
+  padding: 10px;
+  font-size: 12px;
+  word-wrap: normal;
+}
+/* //ISSUE BOOK  */
+.return-button {
+  text-transform: capitalize;
+}
+
+/* RESPONSIVE  */
+@media (max-width: 480px) {
+  /* ADD BOOK PAGE  */
+  .book-container,
+  .add-book-container {
+    width: 99%;
+  }
+  .form-label {
+    font-size: 12px;
+  }
+  .btn {
+    font-size: 12px;
+  }
+  .title-text {
+    font-size: 14px;
+  }
+  .form-control {
+    font-size: 12px;
+  }
+  #avater {
+    font-size: 12px; /* Adjust font size */
+    color: gray; /* Optional */
+    padding: 10px; /* Adjust padding if needed */
+  }
+  /* ALL BOOK PAGE  */
+  .table-container {
+    overflow-x: auto;
+  }
+  .table-container th,
+  .table-container td {
+    font-size: 10px;
+  }
+  .button-group {
+    display: flex;
+  }
+  /* ISSUE BOOK  */
+  .return-button {
+    font-size: 8px;
+  }
 }

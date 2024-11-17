@@ -3,10 +3,12 @@ import BookModel from "../models/bookmodel.js";
 class BookController {
   //ROUTING TO PAGES
   //ROUTE ON BOOK PAGE
-  static bookPage = async (req, res) => {
+  static bookPage = (req, res) => {
     try {
       res.render("book", {
         title: "Book - Library Management",
+        isBook: true,
+        isStudent: false,
       });
     } catch (err) {
       console.log(err);
@@ -16,6 +18,8 @@ class BookController {
   static addnewbookPage = (req, res) => {
     res.render("addnewbook", {
       title: "Add New Book Info. - Library Management",
+      isBook: true,
+      isStudent: false,
     });
   };
 
@@ -25,6 +29,8 @@ class BookController {
       const result = await BookModel.find();
       res.render("allbooks", {
         title: "All Books Info. - Library Management",
+        isBook: true,
+        isStudent: false,
         data: result,
       });
     } catch (err) {
@@ -39,6 +45,8 @@ class BookController {
       const result = await BookModel.findById(req.params.id);
       res.render("editbook", {
         title: "Edit Book Info. - Library Management",
+        isBook: true,
+        isStudent: false,
         data: result,
       });
     } catch (error) {
@@ -50,7 +58,7 @@ class BookController {
   static updateBookDetails = async (req, res) => {
     try {
       const result = await BookModel.findByIdAndUpdate(req.params.id, req.body);
-      res.redirect("allbooks");
+      res.redirect("/allbooks");
     } catch (err) {
       console.log(err);
     }
@@ -59,9 +67,8 @@ class BookController {
   //DELETE THE BOOK DETAILS
   static deleteBookDetails = async (req, res) => {
     try {
-      console.log(req.params.id);
       const result = await BookModel.findByIdAndDelete(req.params.id);
-      res.redirect("allbooks");
+      res.redirect("/allbooks");
     } catch (err) {
       console.log(err);
     }
@@ -71,13 +78,33 @@ class BookController {
   static createNewBookDoc = async (req, res) => {
     try {
       //req.body parameter a sob input information gulo aasbe
-      const { bookName, authorName, edition, publish, stock } = req.body;
+      const {
+        bookName,
+        authorName,
+        editorName,
+        publisherName,
+        edition,
+        category,
+        publish,
+        quantity,
+        condition,
+        status,
+        notes,
+        avater,
+      } = req.body;
       const doc = new BookModel({
         bookName: bookName.toLowerCase(),
         authorName: authorName.toLowerCase(),
+        editorName: editorName.toLowerCase(),
+        publisherName: publisherName.toLowerCase(),
         edition: edition,
+        category: category,
         publish: publish,
-        stock: stock,
+        quantity: quantity,
+        condition: condition,
+        status: status,
+        notes: notes,
+        avater: avater,
       });
       const result = await doc.save();
       console.log("posted");

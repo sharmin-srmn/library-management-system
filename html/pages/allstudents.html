@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/all.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/student.css" />
+    <title>ALl Students</title>
+  </head>
+  <body>
+    <div class="main-container-fluid bg-light min-height">
+      <div class="row">
+        <!-- table  -->
+        <div class="col-12 .col-md-12 py-5">
+          <div class="">
+            <h2
+              class="title-text bg-dark text-light text-center py-2 capitalized-text"
+            >
+              student information
+            </h2>
+          </div>
+          <div class="table-container table-responsive">
+            <table class="table table-light">
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">Student Id</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Phone</th>
+                  <th scope="col">Library Id</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td class="capitalized-text">201071054</td>
+                  <td class="capitalized-text">sharmimn yaegtoiuweO</td>
+                  <td>sharmin@gmail.com</td>
+                  <td>60/1joginagar wari dhaka</td>
+                  <td>01675756215</td>
+                  <td>aidhawklhekihoperigupoierp</td>
+
+                  <td>
+                    <div class="button-group">
+                      <!-- EDIT BUTTON  -->
+                      <form
+                        action="/editstudent/"
+                        method="get"
+                        class="d-inline"
+                      >
+                        <button type="submit" class="btn">
+                          <i class="fa-solid fa-pen-to-square text-info"></i>
+                        </button>
+                      </form>
+
+                      <!-- DELETE BUTTON  -->
+                      <form
+                        action="/deletestudent/<%= student._id %>"
+                        method="post"
+                        class="d-inline"
+                      >
+                        <button type="submit" class="btn">
+                          <i class="fa-solid fa-trash text-danger"></i>
+                        </button>
+                      </form>
+
+                      <!-- DETAILS BUTTON -->
+                      <form
+                        action="/../<%= student._id %>"
+                        method="post"
+                        class="d-inline"
+                      >
+                        <a href="./studentdetails.html">
+                          <button type="button" class="btn btn-info btn-sm">
+                            <span>details</span>
+                          </button>
+                        </a>
+                      </form>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/all.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+  </body>
+</html>

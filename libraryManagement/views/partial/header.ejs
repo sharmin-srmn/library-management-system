@@ -17,9 +17,12 @@
     />
     <link rel="stylesheet" href="/css/all.css" />
     <link rel="stylesheet" href="/css/bootstrap.css" />
-    <link rel="stylesheet" href="/css/book.css" />
     <link rel="stylesheet" href="/css/style.css" />
+    <% if(isBook) {%>
+    <link rel="stylesheet" href="/css/book.css" />
+    <%} else if(isStudent) {%>
+    <link rel="stylesheet" href="/css/student.css" />
+    <% }%>
     <title><%= title %></title>
   </head>
-  <body></body>
-</html>
+  <body>

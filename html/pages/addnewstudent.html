@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/all.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/student.css" />
+    <title>Add New Student</title>
+  </head>
+  <body>
+    <div class="main-container container-fluid py-5">
+      <div class="row">
+        <div
+          class="add-student-container d-flex flex-column align-items-center justify-content-center min-height col-6"
+        >
+          <div class="title-container mb-5">
+            <h2 class="title-text">add new student</h2>
+          </div>
+          <div class="form-container">
+            <!-- // libarary id card, enrollment date  -->
+            <form action="/addnewstudent">
+              <div class="mb-4">
+                <label for="name " class="form-label capitalized-text">
+                  student's name</label
+                >
+                <input type="text" class="form-control" id="name" name="name" />
+              </div>
+
+              <div class="mb-4">
+                <label for="email " class="form-label capitalized-text">
+                  email</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="dob " class="form-label capitalized-text">
+                  date of birth</label
+                >
+                <input type="text" class="form-control" id="dob" name="dob" />
+              </div>
+
+              <div class="mb-4">
+                <label for="gender " class="form-label capitalized-text">
+                  gender</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="gender"
+                  name="gender"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="address " class="form-label capitalized-text">
+                  address</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  name="address"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="phone " class="form-label capitalized-text">
+                  phone number</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="altphone " class="form-label capitalized-text">
+                  alternative phone number</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="altphone"
+                  name="altphone"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="department " class="form-label capitalized-text">
+                  department</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="department"
+                  name="department"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="status " class="form-label capitalized-text">
+                  status</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="status"
+                  name="status"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label
+                  for="enrollmentdate "
+                  class="form-label capitalized-text"
+                >
+                  enrollment date</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="enrollmentdate"
+                  name="enrollmentdate"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label
+                  for="expectedgraduationdate "
+                  class="form-label capitalized-text"
+                >
+                  expected graduation date</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="expectedgraduationdate"
+                  name="expectedgraduationdate"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="avater " class="form-label capitalized-text">
+                  upload image</label
+                >
+                <input
+                  type="file"
+                  class="form-control"
+                  id="avater"
+                  name="avater"
+                />
+              </div>
+
+              <button class="btn btn-dark capitalized-text">submit</button>
+              <button type="button" class="btn btn-primary capitalized-text">
+                <a href="./student.html" class="text-light"
+                  ><i class="fa-solid fa-arrow-left"></i
+                  ><span class="back-button">back</span></a
+                >
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/all.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+  </body>
+</html>

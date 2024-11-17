@@ -1,0 +1,151 @@
+<!-- HEADER  -->
+<%- include('./partial/header.ejs')%>
+<div class="main-container container-fluid">
+  <div class="row">
+    <div class="reponsive-container d-flex flex-column  min-height  px-2">
+      <!-- STUDENT INFORMATION DETAILS  -->
+      <div
+        class="student-info-container d-flex justify-content-center my-5 mx-3"
+      >
+        <!-- STUDENT'S PERSONAL INFORMATION  -->
+        <div class="student-personal-info-container">
+          <h2 class="title-text">student's personal information</h2>
+          <div class="table-container">
+            <table class="">
+              <tbody>
+                <tr>
+                  <th scope="row" colspan="2">name</th>
+                  <td>:</td>
+                  <td><%=data.name %></td>
+                </tr>
+                <tr>
+                  <th scope="row" colspan="2">id</th>
+                  <td>:</td>
+                  <td><%=data._id %></td>
+                </tr>
+                <tr>
+                  <th scope="row" colspan="2">email</th>
+                  <td>:</td>
+                  <td><%=data.email %></td>
+                </tr>
+                <tr>
+                  <th scope="row" colspan="2">date of birth</th>
+                  <td>:</td>
+                  <td><%=data.dob %></td>
+                </tr>
+                <tr>
+                  <th scope="row" colspan="2">gender</th>
+                  <td>:</td>
+                  <td><%=data.gender ? data.gender : "N/a" %></td>
+                </tr>
+                <tr>
+                  <th scope="row" colspan="2">phone</th>
+                  <td>:</td>
+                  <td><%=data.phone %></td>
+                </tr>
+                <tr>
+                  <th scope="row" colspan="2">alternative phone</th>
+                  <td>:</td>
+                  <td><%=data.altphone ? data.altphone : "N/a" %></td>
+                </tr>
+                <tr>
+                  <th scope="row" colspan="2">address</th>
+                  <td>:</td>
+                  <td><%=data.address ? data.address : "N/a" %></td>
+                </tr>
+                <th scope="row" colspan="2">avater</th>
+                  <td>:</td>
+                  <td><img class="student-avater" src="<%=data.avater ? data.avater : '../images/student.jpg'%>" alt=""></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- STUDENT'S ACADEMIC INFORMATION  -->
+        <div class="student-academic-info-container">
+          <h2 class="title-text">student's academic information</h2>
+          <div class="table-container">
+            <table class="">
+              <tbody>
+                <tr>
+                  <th scope="row" colspan="2">library id</th>
+                  <td>:</td>
+                  <td><%=data.libraryId ? data.libraryId : "N/a" %></td>
+                </tr>
+
+                <tr>
+                  <th scope="row" colspan="2">department</th>
+                  <td>:</td>
+                  <td><%=data.department ? data.department : "N/a" %></td>
+                </tr>
+                <tr>
+                  <th scope="row" colspan="2">status</th>
+                  <td>:</td>
+                  <td><%=data.status ? data.status : "N/a" %></td>
+                </tr>
+                <tr>
+                  <th scope="row" colspan="2">enrollment date</th>
+                  <td>:</td>
+                  <td><%=data.
+                    enrollmentDate ?
+                    data.enrollmentDate.toISOString().split('T')[0] : "N/a" %></td>
+                </tr>
+                <tr>
+                  <th scope="row" colspan="2">expected graduation date</th>
+                  <td>:</td>
+                  <td><%=data.expectedGraduationDate ?
+                    data.expectedGraduationDate.toISOString().split('T')[0] : "N/a"
+                    %></td>
+                </tr>                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- ISSUED BOOK HISTORY  -->
+      <div
+        class="issued-book-container d-flex align-items-center flex-column  my-5"
+      >
+        <h2 class="title-text py-5">Issue book history</h2>
+        <div class="table-container">
+          <table class="table table-dark">
+            <thead>
+              <tr>
+                <th>No.</th>
+                <th scope="col">book id</th>
+                <th scope="col">book name</th>
+                <th scope="col">issued date</th>
+                <th scope="col">due date</th>
+                <th scope="col">status</th>
+                <th scope="col">return date</th>
+                <th scope="col">delay fine</th>
+                <th scope="col">comments</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let i = 1 %>
+              <% bookData.forEach((item)=>{ %>
+                <tr>
+                  <th scope="row"><%= i++%></th>
+                  <td class="capitalized-text"><%= item.bookId %></td>
+                  <td class="capitalized-text"><%= item.bookName %></td>
+                  <td class="capitalized-text"><%= item.issueDate ? item.issueDate.toISOString().split('T')[0] : 'n/a' %></td>
+                  <td class="capitalized-text"><%= item.dueDate ? item.dueDate.toISOString().split('T')[0] : 'n/a' %></td>
+                  <td class="capitalized-text"><%= item.status %></td>
+                  <td class="capitalized-text"><%= item.returnDate ? item.returnDate.toISOString().split('T')[0] : 'n/a' %></td>
+                  <td class="capitalized-text"><%= item.fineAmount ? item.fineAmount  : '0' %>tk</td>
+                  
+                  <td class="comment"><%= item.comment && item.status === 'returned' ? item.comment  : 'n/a' %></td>
+                </tr>
+              <% }) %>              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- FOOTER  -->
+<%- include('./partial/footer.ejs')%>
