@@ -12,6 +12,7 @@
       <div class="form-container">
         <!-- // libarary id card, enrollment date  -->
         <form action="/updatestudent/<%= data._id%>" method="POST">
+          <!-- NAME  -->
           <div class="mb-4">
             <label for="name " class="form-label capitalized-text">
               student's name</label
@@ -24,7 +25,7 @@
               value="<%= data.name%>"
             />
           </div>
-
+          <!-- EMAIL  -->
           <div class="mb-4">
             <label for="email " class="form-label capitalized-text">
               email</label
@@ -37,6 +38,7 @@
               value="<%= data.email%>"
             />
           </div>
+          <!-- DATE OF BIRTH  -->
           <div class="mb-4">
             <label for="dob " class="form-label capitalized-text">
               date of birth</label
@@ -49,18 +51,24 @@
               value="<%= data.dob%>"
             />
           </div>
+          <!-- GENDER  -->
           <div class="mb-4">
             <label for="gender " class="form-label capitalized-text">
               gender</label
             >
-            <input
-              type="text"
-              class="form-control"
+            <select
               id="gender"
               name="gender"
-              value="<%= data.gender%>"
-            />
+              class="form-control form-select capitalized-text"
+            >
+              <option value="" disabled >select gender</option>
+              <option value="male" <%= data.gender === 'male' ? 'selected' : '' %> >male</option>
+              <option value="female" <%= data.gender === 'female' ? 'selected' : '' %>>female</option>
+              <option value="other" <%= data.gender === 'other' ? 'selected' : '' %>>other</option>
+            </select>
           </div>
+
+          <!-- ADDRESS  -->
           <div class="mb-4">
             <label for="address " class="form-label capitalized-text">
               address</label
@@ -74,6 +82,7 @@
             />
           </div>
 
+          <!-- PHONE NUMBER  -->
           <div class="mb-4">
             <label for="phone " class="form-label capitalized-text">
               phone number</label
@@ -86,6 +95,8 @@
               value="<%= data.phone%>"
             />
           </div>
+
+          <!-- ALTER NATIVE PHONE  -->
           <div class="mb-4">
             <label for="altphone " class="form-label capitalized-text">
               alternative phone number</label
@@ -99,6 +110,7 @@
             />
           </div>
 
+          <!-- DEPARTMENT  -->
           <div class="mb-4">
             <label for="department " class="form-label capitalized-text">
               department</label
@@ -112,18 +124,26 @@
             />
           </div>
 
+          <!-- STATUS  -->
           <div class="mb-4">
             <label for="status " class="form-label capitalized-text">
               status</label
             >
-            <input
-              type="text"
-              class="form-control"
+            <select
               id="status"
               name="status"
-              value="<%= data.status%>"
-            />
+              class="form-control form-select capitalized-text"
+            >
+              <option value="" disabled >Select status</option>
+              <option value="active" <%= data.status === 'active' ? 'selected' : " " %> >active</option>
+              <option value="graduated" <%= data.status === 'graduated' ? 'selected' : " " %> >graduated</option>
+              <option value="inactive" <%= data.status === 'inactive' ? 'selected' : " " %> >inactive</option>
+              <option value="dropped out" <%= data.status === 'dropped out' ? 'selected' : " " %> >dropped out</option>
+              <option value="expelled" <%= data.status === 'expelled' ? 'selected' : " " %> >expelled</option>
+            </select>
           </div>
+
+          <!-- ENROLLLMENT DTAE  -->
           <div class="mb-4">
             <label for="enrollmentDate " class="form-label capitalized-text">
               enrollment date</label
@@ -136,6 +156,8 @@
               value="<%=data.enrollmentDate ? data.enrollmentDate.toISOString : ' '%>"
             />
           </div>
+
+          <!-- EXPECTED GRADUATION DATE  -->
           <div class="mb-4">
             <label
               for="expectedGraduationDate "
@@ -151,6 +173,8 @@
               value="<%= data.expectedGraduationDate ? data.expectedGraduationDate.toISOString().substring(0, 10) :' '%> "
             />
           </div>
+
+          <!-- BUTTONS GROUP  -->
           <button type="submit" class="btn btn-dark capitalized-text">
             submit
           </button>

@@ -1,0 +1,16 @@
+<!-- HEADER  -->
+<%- include('./partial/header.ejs')%>
+
+<div class="main-container container-fluid min-height">
+  <div class="row">
+    <div
+      class="inner-container d-flex flex-column align-items-center justify-content-center min-height col-6 col-md-6"
+    >
+      <h2 class="error tez mb-5"><%= status %></h2>
+      <h2 class="title-text mb-5"><%= error.message %></h2>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER  -->
+<%- include('./partial/footer.ejs')%>

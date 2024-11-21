@@ -41,7 +41,16 @@
             <label for="gender " class="form-label capitalized-text">
               gender</label
             >
-            <input type="text" class="form-control" id="gender" name="gender" />
+            <select
+              id="gender"
+              name="gender"
+              class="form-control form-select capitalized-text"
+            >
+              <option value="" disabled selected>select gender</option>
+              <option value="male">male</option>
+              <option value="female">female</option>
+              <option value="other">other</option>
+            </select>
           </div>
 
           <!-- ADDRESS  -->
@@ -94,9 +103,20 @@
           <!-- STATUS  -->
           <div class="mb-4">
             <label for="status " class="form-label capitalized-text">
-              *status</label
+              status</label
             >
-            <input type="text" class="form-control" id="status" name="status" />
+            <select
+              id="status"
+              name="status"
+              class="form-control form-select capitalized-text"
+            >
+              <option value="" disabled selected>Select status</option>
+              <option value="active">active</option>
+              <option value="graduated">graduated</option>
+              <option value="inactive">inactive</option>
+              <option value="dropped out">dropped out</option>
+              <option value="expelled">expelled</option>
+            </select>
           </div>
 
           <!-- ENROLLMENT DATE  -->

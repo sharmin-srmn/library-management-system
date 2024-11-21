@@ -17,6 +17,10 @@ body {
 .form-label {
   color: white;
 }
+.form-control{
+  font-size: 12px;
+}
+
 
 /* ALL STUDENT PAGE  */
 

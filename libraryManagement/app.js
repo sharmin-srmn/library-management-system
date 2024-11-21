@@ -6,6 +6,10 @@ import dotenv from "dotenv";
 //EXTERNAL IMPORTS
 import router from "./routes/webRoutes.js";
 import connectDB from "./db/connectDB.js";
+import {
+  notFoundHandler,
+  errorHandler,
+} from "./middlewares/notFoundHandler.js";
 
 const app = express();
 
@@ -25,6 +29,10 @@ app.set("view engine", "ejs");
 
 //SET ROUTER
 app.use("/", router);
+
+//NOT FOUND PAGE
+app.use(notFoundHandler);
+app.use(errorHandler);
 
 //SERVER LISTEN
 app.listen(process.env.PORT, () => {

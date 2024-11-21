@@ -32,16 +32,16 @@ router.post("/countfine/:id", IssueBookController.countFine);
 router.get("/student", StudentController.studentPage);
 router.get("/addnewstudent", StudentController.addnewstudentPage);
 router.get("/allstudents", StudentController.getAllStudentsInformation);
+router.get("/editstudent/:id", StudentController.editStudentPage);
 router.get(
   "/studentinfo/:id",
   StudentController.getIndividualStudentInformation
 );
-router.get("/editstudent/:id", StudentController.editStudentPage);
+router.post("/addnewstudent", StudentController.createNewStudentDoc);
 router.post("/updatestudent/:id", StudentController.updateStudentDetails);
+router.post("/deletestudent/:id", StudentController.deleteStudentDetails);
 
 // router.post("/editstudent/:id", StudentController.updateStudentDetails);
 
-router.post("/addnewstudent", StudentController.createNewStudentDoc);
-router.post("/deletestudent/:id", StudentController.deleteStudentDetails);
 
 export default router;
